@@ -1,3 +1,22 @@
 export const SITE_CONFIG = {
-    website: "https://lukisans.page.dev"
-}
+  website: "https://fahmilukis.web.id",
+  author: "Fahmi Lukistriya",
+  profile: "https://github.com/lukisans",
+  desc: "A blog sharing my journey as a developer — from PHP and React to exploring Elixir, Web3, and Rust.",
+  title: "Fahmi Blog's",
+  ogImage: "og_image.jpg",
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: true,
+    text: "Suggest Changes",
+    url: "https://github.com/lukisans/blog/edit/main/",
+  },
+  dynamicOgImage: true,
+  lang: "en",
+  timezone: "Asia/Jakarta",
+} as const;

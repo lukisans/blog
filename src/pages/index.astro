@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@/layouts/layout.astro";
+import Footer from "@/layouts/section/footer.astro";
+import Header from "@/layouts/section/header.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <main id="main-content" data-layout="index">
+    <section id="hero" aria-label="Introduction" class="py-6">
+      <h1 class="text-4xl md:text-5xl mb-4 font-extrabold text-gray-900">
+        Building better web experiences
+      </h1>
+      <p class="leading-loose text-lg text-gray-700">
+        I’m a web developer with strong expertise in PHP and React, currently
+        expanding my skills by diving into Web3 technologies like Solidity and
+        Rust. I focus on performance, scalability, and creating applications
+        that make the web work better for everyone.
+      </p>
+    </section>
+  </main>
+  <Footer />
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset?.layout;
+    if (indexLayout) {
+      sessionStorage.setItem("backUrl", "/");
+    }
+  });
+</script>
